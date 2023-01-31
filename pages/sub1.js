@@ -1,16 +1,18 @@
-import Head from 'next/head';
+import Layout from '@/components/Layout';
+import SubLayout from '@/components/SubLayout';
 
 export default function Sub1() {
 	return (
 		<>
-			<Head>
-				<title>Create Dcode App</title>
-				<link rel='icon' href='/favicon.ico' />
-			</Head>
-
-			<main>
-				<h1>Sub1 Page</h1>
-			</main>
+			<p>sub1 컨텐츠 페이지</p>
 		</>
 	);
 }
+
+Sub1.getLayout = function getLayout(page) {
+	return (
+		<Layout>
+			<SubLayout tit={'Sub1'}>{page}</SubLayout>
+		</Layout>
+	);
+};
