@@ -1,18 +1,25 @@
 import Layout from '@/components/Layout';
 import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
 
 export default function Detail(props) {
 	const router = useRouter();
 	const { detail, name, age } = router.query;
-	console.log(router.query);
-	//loacalhost:3000/community/abc?name=david&age=20
-	//slug뿐만 아니라 쿼리스트링값도 router.query로 전달 가능
+	const [Member, setMember] = useState('');
+
+	useEffect(() => {
+		fetch('/api/member')
+			.then((res) => res.json())
+			.then((json) => {
+				console.log(json);
+				setMember(json.name);
+			});
+	}, []);
 
 	return (
 		<>
 			<p>{detail}</p>
-			<p>name: {name}</p>
-			<p>age: {age}</p>
+			<p>name: {Member}</p>
 		</>
 	);
 }
