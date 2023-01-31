@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import pic1 from '@/public/pic1.jpg';
 import Image from 'next/image';
 
-export default function Home() {
+export default function Home(props) {
 	const [Dept, setDept] = useState([]);
 
 	useEffect(() => {
@@ -12,10 +12,6 @@ export default function Home() {
 			.then((res) => res.json())
 			.then((json) => setDept(json.members));
 	}, []);
-
-	useEffect(() => {
-		console.log(Dept);
-	}, [Dept]);
 
 	return (
 		<>
@@ -27,7 +23,7 @@ export default function Home() {
 			<Header />
 
 			<main className='Main'>
-				<h1>DCODELAB Main</h1>
+				<h1>Now : {props.now}</h1>
 				<div className='pic'>
 					<Image src={pic1} alt='pic1' priority fill quality={50} />
 				</div>
@@ -42,4 +38,11 @@ export default function Home() {
 			</main>
 		</>
 	);
+}
+
+export async function getServerSideProps() {
+	console.log('server');
+	return {
+		props: { now: performance.now() },
+	};
 }

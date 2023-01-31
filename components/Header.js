@@ -13,13 +13,13 @@ export default function Header() {
 
 			<ul id='gnb'>
 				<li>
-					<Link href='/sub1' className={currentPath === '/sub1' ? 'on' : ''}>
-						Sub1
+					<Link href='/csr' className={currentPath === '/csr' ? 'on' : ''}>
+						Client Sider Render
 					</Link>
 				</li>
 				<li>
-					<Link href='/sub2' className={currentPath === '/sub2' ? 'on' : ''}>
-						Sub2
+					<Link href='/ssg' className={currentPath === '/ssg' ? 'on' : ''}>
+						Static Site Generation
 					</Link>
 				</li>
 				<li>
