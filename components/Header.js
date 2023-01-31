@@ -23,8 +23,8 @@ export default function Header() {
 					</Link>
 				</li>
 				<li>
-					<Link href='/sub3' className={currentPath === '/sub3' ? 'on' : ''}>
-						Sub3
+					<Link href='/isr' className={currentPath === '/isr' ? 'on' : ''}>
+						Incremental Static Regeneration
 					</Link>
 				</li>
 			</ul>
