@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Header from './Header';
 
 export default function Layout(props) {
 	return (
@@ -8,6 +9,7 @@ export default function Layout(props) {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
+			<Header />
 			<main className={`Sub ${props.tit}`}>
 				<h1>{props.tit}</h1>
 				<section>{props.children}</section>
