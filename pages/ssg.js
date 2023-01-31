@@ -1,10 +1,19 @@
 import Layout from '@/components/Layout';
+import data from '@/public/members.json';
 
 export default function SSG(props) {
 	return (
 		<>
 			<h2>Now: {props.now}</h2>
 			<p>sub2 컨텐츠 페이지</p>
+			{props.members.map((member, idx) => {
+				return (
+					<article key={idx}>
+						<h2>{member.name}</h2>
+						<p>{member.positon}</p>
+					</article>
+				);
+			})}
 		</>
 	);
 }
@@ -17,7 +26,7 @@ export async function getStaticProps() {
 	console.log('ssg');
 
 	return {
-		props: { now: performance.now() },
+		props: { now: performance.now(), members: data.members },
 	};
 }
 
