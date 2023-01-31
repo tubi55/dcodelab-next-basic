@@ -1,5 +1,4 @@
 import Layout from '@/components/Layout';
-import SubLayout from '@/components/SubLayout';
 
 export default function Sub3() {
 	return (
@@ -10,9 +9,5 @@ export default function Sub3() {
 }
 
 Sub3.getLayout = function getLayout(page) {
-	return (
-		<Layout>
-			<SubLayout tit={'Sub3'}>{page}</SubLayout>
-		</Layout>
-	);
+	return <Layout tit={'Sub3'}>{page}</Layout>;
 };

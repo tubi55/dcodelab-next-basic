@@ -1,5 +1,4 @@
 import Layout from '@/components/Layout';
-import SubLayout from '@/components/SubLayout';
 
 export default function Sub2() {
 	return (
@@ -10,9 +9,5 @@ export default function Sub2() {
 }
 
 Sub2.getLayout = function getLayout(page) {
-	return (
-		<Layout>
-			<SubLayout tit={'Sub2'}>{page}</SubLayout>
-		</Layout>
-	);
+	return <Layout tit={'Sub2'}>{page}</Layout>;
 };
